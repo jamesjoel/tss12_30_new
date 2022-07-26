@@ -1,0 +1,56 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family: Helvetica;
+}
+.top-header{
+    background-color: #88D841;
+    height: 50px;
+    width: 100%;
+}
+.header{
+    background-color: #fff;
+    height: 100px;
+    width: 100%;
+}
+.navbar{
+    background-color: #353535;
+    height: 40px;
+    width: 100%;
+}
+.slider{
+    height: 300px;
+    width: 100%;
+    background-color: #164966;
+}
+.register-domain{
+    height: 250px;
+    width: 100%;
+    background-color: #FFF;
+}
+.content{
+    height: auto;
+    min-height: 600px;
+    width: 100%;
+    background-color: #cacdce;
+}
+.bottom-slider{
+    height: 250px;
+    width: 100%;
+    background-color: #444547;
+}
+.counter{
+    height: 100px;
+    width: 100%;
+    background-color: #FFF;
+}
+.footer{
+    height: 280px;
+    width: 100%;
+    background-color: #333333;
+}
+.bottom-footer{
+    height: 40px;
+    width: 100%;
+    background-color: #000;
+}

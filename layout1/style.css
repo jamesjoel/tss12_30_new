@@ -1,0 +1,37 @@
+body{
+    background-color: #31C4F3;
+    margin: 0;
+    padding: 0;
+    font-family: Helvetica;
+}
+.header{
+    height: 100px;
+    width: 100%;
+    background-color: #162A30;
+}
+.navbar{
+    height: 40px;
+    width: 100%;
+    background-color: #000;
+}
+.slider{
+    height: 300px;
+    width: 100%;
+    /* background-color: red; */
+}
+.company{
+    height: 150px;
+    width: 100%;
+    background-color: #fff;
+}
+.content{
+    width: 100%;
+    height: auto;
+    min-height: 600px;
+    /* background-color: red; */
+}
+.footer{
+    height: 250px;
+    width: 100%;
+    background-color: #162A30;
+}
