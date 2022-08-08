@@ -1,0 +1,80 @@
+.bg-purple{
+    background-color: #A43ACB;
+}
+.text-purple{
+    color: #A43ACB;
+}
+.border-purple{
+    border : 1px solid #A43ACB !important;
+}
+
+.bg-dark2{
+    background-color: #0E0A18;
+}
+#menu .nav .nav-item .nav-link{
+    color: #fff;
+}
+#menu .nav .nav-item .nav-link:hover{
+    background-color: #A43ACB;
+}
+.slider{
+    height: 300px;
+    background-image: url("../images/hero-1.jpg");
+    background-size: 100% 100%;
+}
+.btn-dark2{
+    background-color: #0E0A18;
+    color: #fff;
+}
+.btn-dark2:hover{
+    background-color: #A43ACB;
+    color: #fff;
+}
+.logos{
+    cursor: pointer;
+}
+.logos:hover{
+    background-color: #A43ACB;
+}
+.content{
+    min-height: 700px;
+}
+.left-content h5{
+    background-color: #A43ACB;
+}
+.left-content .nav{
+    /* background-color: red; */
+}
+.left-content .nav .nav-item .nav-link{
+    /* background-color: blue; */
+    color: #0E0A18;
+    /* transition: 1s; */
+}
+.left-content .nav .nav-item .nav-link:hover{
+    background-color: #A43ACB;
+    color: #fff;
+}
+
+.left-content .nav .nav-item .fa-angle-double-right{
+    transition: .5s;
+}
+
+.left-content .nav .nav-item .nav-link:hover .fa-angle-double-right{
+    /* padding-right: -5px !important; */
+    margin-right: 10px;
+}
+
+
+.text-gray{
+    color: #aaa9a9;
+}
+.card{
+    transition: .5s;
+}
+.product img{
+    height: 200px !important;
+}
+.product .card:hover{
+    cursor: pointer;
+    box-shadow: 0px 0px 20px #000;
+}
