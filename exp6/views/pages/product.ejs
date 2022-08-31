@@ -1,0 +1,31 @@
+<%- include("../includes/header") %>
+
+            <div class="container" style="min-height: 700px;">
+                <h2>Product Page</h2>
+                <div class="row">
+                    <div class="col-md-12">
+                        <table class="table-dark table table-hover table-bordered table-striped">
+                            <tr>
+                                <th>S.No.</th>
+                                <th>Title</th>
+                                <th>Price</th>
+                                <th>Category</th>
+                                <th>Total</th>
+                                <th>Image</th>
+                            </tr>
+                            <% pro.forEach((x, n)=>{ %>
+                                <tr>
+                                    <td><%= n+1 %></td>
+                                    <td><%= x.title %></td>
+                                    <td><%= x.price %></td>
+                                    <td><%= x.category %></td>
+                                    <td><%= x.rating.count %></td>
+                                    <td><img src="<%= x.image %>" height="80" width="80" /></td>
+                                </tr>
+                            <% }) %>
+                        </table>
+                    </div>
+                </div>
+                
+            </div>
+<%- include("../includes/footer") %>
