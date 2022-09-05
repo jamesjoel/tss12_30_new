@@ -10,7 +10,7 @@ routes.get("/global", (req, res)=>{
 
 })
 routes.get("/local/chat", (req, res)=>{
-
+    
 })
 
 module.exports = routes;
