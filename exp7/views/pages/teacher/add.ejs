@@ -1,0 +1,82 @@
+<%- include("../../includes/header") %>
+</div>
+<div class="container mt-4" style="min-height: 700px;">
+    <div class="row">
+        <div class="col-md-12">
+            <h3>Teacher Add Page</h3>
+            <form action="/teacher/save" method="post">
+            <div class="row">
+                <div class="col-md-6 offset-md-3">
+                    <div class="card border border-primary my-4">
+                        <div class="card-header bg-primary text-light"><h4>Add New Student</h4></div>
+                    
+                        <div class="card-body">
+                            <div class="form-group">
+                                <label>Full Name</label>
+                                <input type="text" name="fullname" class="form-control" />
+                            </div>
+                            <div class="form-group">
+                                <label>Education</label>
+                                <br />
+                                <select class="form-control" name="education">
+                                    <option>Select</option>
+                                    <option>Bachelor</option>
+                                    <option>Master</option>
+                                    <option>P.Hd.</option>
+                                    <option>M.Phil</option>
+                                    
+                                </select>
+                            </div>
+                            <br />
+                            <br />
+                            <div class="form-group">
+                                <label>Salary</label>
+                                <input type="text" name="salary" class="form-control" />
+                            </div>
+                            <div class="form-group">
+                                <label>City</label>
+                                <br />
+                                <select class="form-control" name="city">
+                                    <option>Select</option>
+                                    <option>Indore</option>
+                                    <option>Mumbai</option>
+                                    <option>Pune</option>
+                                    <option>Delhi</option>
+                                    
+                                    
+                                </select>
+                            </div>
+                            <br />
+                            <br />
+                            <div class="form-group">
+                                <label>Address</label>
+                                <textarea name="address" class="form-control" ></textarea>
+                            </div>
+                            <br />
+                            <div class="form-group">
+                                <label>Gender</label>
+                                <br />
+                                Male <input type="radio" value="male" name="gender"  />
+                                Female <input type="radio" value="female" name="gender"  />
+                            </div>
+                            <div class="form-group">
+                                <label>Hobbies</label>
+                                <br />
+                                Cricket <input type="checkbox" name="hobby" value="cricket"/>
+                                Football <input type="checkbox" name="hobby" value="football"/>
+                                Music <input type="checkbox" name="hobby" value="music"/>
+                                Internet <input type="checkbox" name="hobby" value="internet"/>
+                            </div>
+                            
+                        </div>
+                        <div class="card-footer">
+                            <input type="submit" class="btn btn-success" value="Add" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </form>
+        </div>
+    </div>
+</div>
+<%- include("../../includes/footer") %>

@@ -13,10 +13,7 @@ routes.post("/save", (req, res)=>{
     // req.body
     // first parameter is "connection URL"
     MongoClient.connect("mongodb://localhost:27017", (err, con)=>{
-        if(err){
-            console.log(err);
-            return;
-        }
+        
         // use tss12_30
         var db = con.db("tss12_30");
         db.collection("student").insertOne(req.body);
