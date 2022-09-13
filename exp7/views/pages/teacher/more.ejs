@@ -1,0 +1,39 @@
+<%- include("../../includes/header") %>
+</div>
+<div class="container mt-4" style="min-height: 700px;">
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <table class="table table-dark table-bordered">
+                <tr>
+                    <td>Full Name</td>
+                    <td><%= result.fullname %></td>
+                </tr>
+                <tr>
+                    <td>Education</td>
+                    <td><%= result.education %></td>
+                </tr>
+                <tr>
+                    <td>Salary</td>
+                    <td><%= result.salary %></td>
+                </tr>
+                <tr>
+                    <td>City</td>
+                    <td><%= result.city %></td>
+                </tr>
+                <tr>
+                    <td>Gender</td>
+                    <td><%= result.gender %></td>
+                </tr>
+                <tr>
+                    <td>Address</td>
+                    <td><%= result.address %></td>
+                </tr>
+                <tr>
+                    <td>Hobbies</td>
+                    <td><%= result.hobby %></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
+<%- include("../../includes/footer") %>

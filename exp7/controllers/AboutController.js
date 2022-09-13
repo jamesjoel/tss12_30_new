@@ -7,7 +7,14 @@ routes.get("/info", (req, res)=>{
     res.render("pages/about/info");
     
 })
-routes.get("/more", (req, res)=>{
+routes.get("/more/:city/:fee/:name", (req, res)=>{
+    var x = req.params.city;
+    var y = req.params.fee;
+    var z = req.params.name;
+
+    // console.log(x, y, z);
+    
+
     res.render("pages/about/more");
 
 })
