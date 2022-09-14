@@ -21,8 +21,8 @@
                         <td><%= x.education %></td>
                         <td><%= x.salary %></td>
                         <td><a href="/teacher/moreinfo/<%= x._id %>" class="btn btn-sm btn-info"><i class="fa fa-sign-in" aria-hidden="true"></i></a></td>
-                        <td><a href="#" class="btn btn-sm btn-warning"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a></td>
-                        <td><a href="#" class="btn btn-sm btn-danger"><i class="fa fa-trash-o" aria-hidden="true"></i></a></td>
+                        <td><a href="/teacher/edit/<%= x._id %>" class="btn btn-sm btn-warning"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a></td>
+                        <td><a href="/teacher/delete/<%= x._id %>" class="btn btn-sm btn-danger"><i class="fa fa-trash-o" aria-hidden="true"></i></a></td>
                     </tr>
                 <% }) %>
             </table>

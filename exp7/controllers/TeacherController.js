@@ -43,6 +43,48 @@ routes.get("/moreinfo/:id", (req, res)=>{
         })
     })
 })
+routes.get("/delete/:id", (req, res)=>{
+    var a = req.params.id; // 123
+    
+    MongoClient.connect(dbUrl, (err, con)=>{
+        var db = con.db(dbName);
+        db.collection(collName).find({ _id : mongodb.ObjectId(a) }).toArray((err, result)=>{
+            // console.log(result);
+            // return;
+            db.collection("teacher_backup").insertOne(result[0], (err)=>{
+                if(err){
+                    console.log(err);
+                    return;
+                }
+                 db.collection(collName).deleteMany({ _id : mongodb.ObjectId(a) }, (err)=>{
+                    res.redirect("/teacher");
+                })
+            })
+        })
+    })
+})
+routes.get("/edit/:id", (req, res)=>{
+    var a = req.params.id;
+    MongoClient.connect(dbUrl, (err, con)=>{
+        var db = con.db(dbName);
+        db.collection(collName).find({ _id : mongodb.ObjectId(a)}).toArray((err, result)=>{
+            console.log(result[0]);
+            var pagedata = { result : result[0] };
+            res.render("pages/teacher/edit", pagedata);
+        })
+    })
+})
 
 
 module.exports = routes;
+
+/*
+    res.sendFile() ---      File Send
+    res.render()    ---     File and Data
+    res.send()      ---     Data
+    res.redirect()
+
+
+
+*/
+
