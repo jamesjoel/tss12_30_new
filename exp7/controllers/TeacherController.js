@@ -8,7 +8,7 @@ const collName = "teacher";
 routes.get("/", (req, res)=>{
     MongoClient.connect(dbUrl, (err, con)=>{
         var db = con.db(dbName);
-        db.collection(collName).find().toArray((err, result)=>{
+        db.collection(collName).find({ status : 1 }).toArray((err, result)=>{
             var pagedata = { result : result };
             res.render("pages/teacher/index", pagedata);
         })
@@ -22,7 +22,7 @@ routes.post("/save", (req, res)=>{
     
     
     req.body.salary = parseInt(req.body.salary);
-    
+    req.body.status = 1;
     
     MongoClient.connect(dbUrl, (err, con)=>{
         var db = con.db(dbName);
@@ -45,8 +45,40 @@ routes.get("/moreinfo/:id", (req, res)=>{
 })
 routes.get("/delete/:id", (req, res)=>{
     var a = req.params.id; // 123
-    
     MongoClient.connect(dbUrl, (err, con)=>{
+        var db = con.db(dbName);
+        db.collection(collName).updateMany({ _id : mongodb.ObjectId(a)}, { $set : { status : 0 }}, (err)=>{
+            res.redirect("/teacher");
+        })
+    })
+    
+    
+})
+routes.get("/edit/:id", (req, res)=>{
+    var a = req.params.id;
+    MongoClient.connect(dbUrl, (err, con)=>{
+        var db = con.db(dbName);
+        db.collection(collName).find({ _id : mongodb.ObjectId(a)}).toArray((err, result)=>{
+            
+            var pagedata = { result : result[0] };
+            res.render("pages/teacher/edit", pagedata);
+        })
+    })
+})
+routes.post("/update/:id", (req, res)=>{
+    //console.log(req.body);
+    var a = req.params.id;
+    MongoClient.connect(dbUrl, (err, con)=>{
+        var db = con.db(dbName);
+        db.collection(collName).updateMany({ _id : mongodb.ObjectId(a) }, { $set : req.body }, (err)=>{
+            res.redirect("/teacher");
+        })
+    })
+})
+
+
+/*
+MongoClient.connect(dbUrl, (err, con)=>{
         var db = con.db(dbName);
         db.collection(collName).find({ _id : mongodb.ObjectId(a) }).toArray((err, result)=>{
             // console.log(result);
@@ -62,19 +94,10 @@ routes.get("/delete/:id", (req, res)=>{
             })
         })
     })
-})
-routes.get("/edit/:id", (req, res)=>{
-    var a = req.params.id;
-    MongoClient.connect(dbUrl, (err, con)=>{
-        var db = con.db(dbName);
-        db.collection(collName).find({ _id : mongodb.ObjectId(a)}).toArray((err, result)=>{
-            console.log(result[0]);
-            var pagedata = { result : result[0] };
-            res.render("pages/teacher/edit", pagedata);
-        })
-    })
-})
 
+
+
+*/
 
 module.exports = routes;
 
