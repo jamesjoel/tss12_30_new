@@ -3,7 +3,8 @@ const mongoose = require("mongoose");
 
 const Student = mongoose.Schema({
     fullname : String,
-    age : Number
+    age : Number,
+    city : String
 })
 
 module.exports = mongoose.model("student", Student);

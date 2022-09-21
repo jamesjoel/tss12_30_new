@@ -19,6 +19,18 @@
                                 <label>Age</label>
                                 <input type="text" name="age" class="form-control" />
                             </div>
+                            <br />
+                            
+                            <div class="form-group">
+                                <label>City</label>
+                                <br />
+                                <select name="city" class="form-control" >
+                                    <option>Select</option>
+                                    <% city.forEach(x=>{ %>
+                                        <option><%= x.name %></option>
+                                    <% }) %>
+                                </select>
+                            </div>
                         </div>
                         <div class="card-footer">
                             <input type="submit" class="btn btn-success" value="Add" />

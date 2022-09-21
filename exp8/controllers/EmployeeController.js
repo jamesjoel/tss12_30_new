@@ -1,5 +1,6 @@
 const routes = require("express").Router();
 const Employee = require("../models/Employee");
+const City = require("../models/City");
 
 routes.get("/", (req, res)=>{
     Employee.find({}, (err, result)=>{
@@ -8,13 +9,19 @@ routes.get("/", (req, res)=>{
     })
 });
 routes.get("/add", (req, res)=>{
-    res.render("pages/employee/add");
+    City.find({}, (err, result)=>{
+        var pagedata = { city : result };
+        res.render("pages/employee/add", pagedata);
+    })
 });
 routes.get("/edit/:id", (req, res)=>{
     var id = req.params.id;
     Employee.find({_id:id}, (err, result)=>{
-        var pagedata = { result : result[0] };
-        res.render("pages/employee/edit", pagedata);
+        City.find({}, (err, result2)=>{
+
+            var pagedata = { result : result[0], city : result2 };
+            res.render("pages/employee/edit", pagedata);
+        })
     })
 });
 routes.post("/edit/:id", (req, res)=>{
